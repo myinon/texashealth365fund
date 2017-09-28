@@ -40,23 +40,43 @@
 
 	// http://stackoverflow.com/a/16136789
 	function scrollTo(element, to, duration) {
-		let start = element.scrollTop,
-			change = to - start,
+		let start = 0,
+			change = 0,
 			currentTime = 0,
 			increment = 20,
 			rafId = 0,
 			animateScroll = function(time) {
 				currentTime += increment;
 				var val = Math.easeInOutQuad(currentTime, start, change, duration);
-				element.scrollTop = val;
+				if (Array.isArray(element)) {
+					for (let el of element) {
+						el.scrollTop = val;
+					}
+				} else {
+					element.scrollTop = val;
+				}
 				if (currentTime < duration) {
 					requestAnimationFrame(animateScroll);
 				} else {
-					element.scrollTop = to;
+					if (Array.isArray(element)) {
+						for (let el of element) {
+							el.scrollTop = to;
+						}
+					} else {
+						element.scrollTop = to;
+					}
 					cancelAnimationFrame(rafId);
 				}
 			};
 
+		if (Array.isArray(element)) {
+			for (let el of element) {
+				start = start || el.scrollTop;
+			}
+		} else {
+			start = element.scrollTop;
+		}
+		change = to - start;
 		rafId = requestAnimationFrame(animateScroll);
 	}
 
@@ -194,10 +214,10 @@
 				}
 				if (isFixed) {
 					padding = parseInt(window.getComputedStyle(article).paddingTop.replace(/[^0-9]*/g, ""));
-					scrollTo(document.documentElement, targ.offsetTop - margin - padding, SCROLL_DURATION);
+					scrollTo([document.documentElement, document.body], targ.offsetTop - margin - padding, SCROLL_DURATION);
 				} else {
 					// 349 is the difference between the expanded menu height and the normal menu height
-					scrollTo(document.documentElement, targ.offsetTop - 349 - margin - padding, SCROLL_DURATION);
+					scrollTo([document.documentElement, document.body], targ.offsetTop - 349 - margin - padding, SCROLL_DURATION);
 				}
 			}
 
@@ -219,7 +239,7 @@
 	}, false);
 
 	top.addEventListener("click", (e) => {
-		scrollTo(document.documentElement, 0, SCROLL_DURATION);
+		scrollTo([document.documentElement, document.body], 0, SCROLL_DURATION);
 
 		cancelDefault(e);
 		return false;
@@ -247,7 +267,7 @@
 		return false;
 	}
 	
-	for (let yt of youtube) {
+	for (let yt of Array.from(youtube)) {
 		yt.style.backgroundImage = [
 			'url("https://i.ytimg.com/vi/',
 			yt.dataset.id,
@@ -275,11 +295,11 @@
 			threshold: [0]
 		});
 		
-		for (let el of slidingSections) {
+		for (let el of Array.from(slidingSections)) {
 			observer.observe(el);
 		}
 	} else {
-		for (let el of slidingSections) {
+		for (let el of Array.from(slidingSections)) {
 			el.classList.remove("slide-top");
 		}
 	}
