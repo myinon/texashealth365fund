@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -47,8 +47,6 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" hreflang="en" />
 		<link id="normalize-css" rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" hreflang="en" integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" crossorigin="anonymous" />
 		<link id="fontawesome-css" rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" hreflang="en" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-		<link rel="stylesheet" type="text/css" href="css/slick.css" hreflang="en" />
-		<link rel="stylesheet" type="text/css" href="css/slick-theme.css" hreflang="en" />
 		<link id="page-css" rel="stylesheet" type="text/css" href="css/main.css" hreflang="en" />
 	</head>
 	<body id="top">
@@ -90,13 +88,79 @@
 			<article>
 				<!-- Intro -->
 				<section id="intro" class="wrapper section-intro">
-					<img srcset="img/THR_Mobile_homePGHero.jpg 767w, img/homePGHero.jpg 1200w" sizes="(max-width: 767px) 767px, (max-width: 1200px) 100vw, 1200px" src="img/homePGHero.jpg" alt="" />
+					<picture>
+						<source media="(max-width: 767px)" srcset="img/THR_Mobile_homePGHero.jpg" />
+						<source media="(min-width: 786px)" srcset="img/homePGHero.jpg" />
+						<img src="img/homePGHero.jpg" alt="" />
+					</picture>
 					<div class="inner-wrapper">
 						<div class="container container-intro">
 							<div class="text">
 								<h2>Your gift helps us fill the gaps.</h2>
 								<p>By supporting the Texas Health 365 Fund, you help us provide important treatments and services to meet the greatest needs within our North Texas community.</p>
 							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Slider -->
+				<section id="slider" class="wrapper section-slider">
+					<div class="inner-wrapper">
+						<div class="container container-slider">
+							<figure class="slide">
+								<picture>
+									<source media="(max-width: 767px)" srcset="img/THR_Mobile_Slider1.jpg" />
+									<source media="(min-width: 786px)" srcset="img/slide-1.jpg" />
+									<img src="img/slide-1.jpg" alt="" />
+								</picture>
+								<figcaption class="text">
+									<h2>Every day of the year, your gift transforms a life.</h2>
+									<p><strong>Day 37</strong><br />Your gift helps us provide music therapy to adults and children at Texas Health Presbyterian Hospital Plano.</p>
+								</figcaption>
+							</figure>
+							<figure class="slide">
+								<picture>
+									<source media="(max-width: 767px)" srcset="img/THR_Mobile_Slider2.jpg" />
+									<source media="(min-width: 786px)" srcset="img/slide-2.jpg" />
+									<img src="img/slide-2.jpg" alt="" />
+								</picture>
+								<figcaption class="text">
+									<h2>Every day of the year, your gift transforms a life.</h2>
+									<p><strong>Day 75</strong><br />Your gift ensures more than a dozen people receive an early cancer screening at our mobile health unit.</p>
+								</figcaption>
+							</figure>
+							<figure class="slide">
+								<picture>
+									<source media="(max-width: 767px)" srcset="img/THR_Mobile_Slider3.jpg" />
+									<source media="(min-width: 786px)" srcset="img/slide-3.jpg" />
+									<img src="img/slide-3.jpg" alt="" />
+								</picture>
+								<figcaption class="text">
+									<h2>Every day of the year, your gift transforms a life.</h2>
+									<p><strong>Day 103</strong><br />Your gift enables us to deliver health outreach to underserved individuals in Fort Worth.</p>
+								</figcaption>
+							</figure>
+							<figure class="slide">
+								<picture>
+									<source media="(max-width: 767px)" srcset="img/THR_Mobile_Slider4.jpg" />
+									<source media="(min-width: 786px)" srcset="img/slide-4.jpg" />
+									<img src="img/slide-4.jpg" alt="" />
+								</picture>
+								<figcaption class="text">
+									<h2>Every day of the year, your gift transforms a life.</h2>
+									<p><strong>Day 222</strong><br />Your gift supports Bluebonnet Retreat, the only adult cancer camp of its kind in North Texas.</p>
+								</figcaption>
+							</figure>
+							<figure class="slide">
+								<picture>
+									<source media="(max-width: 767px)" srcset="img/THR_Mobile_Slider5.jpg" />
+									<source media="(min-width: 786px)" srcset="img/slide-5.jpg" />
+									<img src="img/slide-5.jpg" alt="" />
+								</picture>
+								<figcaption class="text">
+									<h2>Every day of the year, your gift transforms a life.</h2>
+									<p><strong>Day 287</strong><br />Your gift helps us improve patient care and ensure we stand ready to serve generations of patients.</p>
+								</figcaption>
+							</figure>
 						</div>
 					</div>
 				</section>
@@ -126,7 +190,11 @@
 				</section>
 				<!-- Technology -->
 				<section id="technology" class="wrapper section-tech slide-top">
-					<img srcset="img/THR_Mobile_Technology.jpg 767w, img/technology-and-equipment.jpg 1200w" sizes="(max-width: 767px) 767px, (max-width: 1200px) 100vw, 1200px" src="img/technology-and-equipment.jpg" alt="" />
+					<picture>
+						<source media="(max-width: 767px)" srcset="img/THR_Mobile_Technology.jpg" />
+						<source media="(min-width: 786px)" srcset="img/technology-and-equipment.jpg" />
+						<img src="img/technology-and-equipment.jpg" alt="" />
+					</picture>
 					<div class="inner-wrapper">
 						<div class="container container-tech">
 							<div class="text">
@@ -164,7 +232,11 @@
 				</section>
 				<!-- Caring for the Whole Person -->
 				<section id="caring" class="wrapper section-caring slide-top">
-					<img srcset="img/THR_Mobile_Caring.jpg 767w, img/caring-for-whole-person.jpg 1200w" sizes="(max-width: 767px) 767px, (max-width: 1200px) 100vw, 1200px" src="img/caring-for-whole-person.jpg" alt="" />
+					<picture>
+						<source media="(max-width: 767px)" srcset="img/THR_Mobile_Caring.jpg" />
+						<source media="(min-width: 786px)" srcset="img/caring-for-whole-person.jpg" />
+						<img src="img/caring-for-whole-person.jpg" alt="" />
+					</picture>
 					<div class="inner-wrapper">
 						<div class="container container-caring">
 							<div class="text">

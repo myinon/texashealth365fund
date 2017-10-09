@@ -142,7 +142,7 @@ article {
 
 .inner-wrapper {
 	margin: 0 auto;
-	max-width: 1087px;
+	max-width: 1086px;
 	position: relative;
 	width: 100%;
 }
@@ -386,6 +386,77 @@ article {
 	line-height: normal;
 }
 
+/* Slider */
+
+.slide {
+	margin: 0;
+}
+
+.container-slider {
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+@supports (animation-name: fade) {
+	.slide {
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+		opacity: 0;
+	}
+	/*
+	 * Negative offset in order to avoid images popping into
+	 * view during the first iteration of the animation.
+	 */
+	.slide:nth-child(1) {
+		animation: fade 30s linear -30s infinite normal running;
+	}
+	.slide:nth-child(2) {
+		animation: fade 30s linear -24s infinite normal;
+	}
+	.slide:nth-child(3) {
+		animation: fade 30s linear -18s infinite normal;
+	}
+	.slide:nth-child(4) {
+		animation: fade 30s linear -12s infinite normal;
+	}
+	.slide:nth-child(5) {
+		animation: fade 30s linear -6s infinite normal;
+	}
+	.container-slider:hover .slide {
+		animation-play-state: paused;
+	}
+	/*
+	 * 5 images for 6 seconds each
+	 * 1 second is used for the transition
+	 * 100% / 5 = 20% (Length of frame)
+	 * 20% / 6 = 3.33333333%   (Length of 1 second)
+	 */
+	@keyframes fade {
+		0% {
+			opacity: 1;
+		}
+		16.66666667% {
+			opacity: 1;
+		}
+		20% {
+			opacity: 0;
+		}
+		96.66666667% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+.section-slider .text {
+	background-color: #00a499;
+	border-top: 15px solid #003698;
+	height: 250px;
+	padding: 15px;
+}
+
 /* Continuing Nursing Education and Patient Wellness */
 
 #cne.wrapper,
@@ -539,14 +610,9 @@ article {
 	visibility: visible;
 }
 
-@media (min-width: 801px) {
-	.top {
-		bottom: 1.1em;
-		font-size: 50px;
-		height: 82px;
-		line-height: 76px/*1.15*/;
-		right: 1.1em;
-		width: 82px;
+@media (min-width: 410px) {
+	.section-slider .text {
+		height: 182px;
 	}
 }
 
@@ -594,6 +660,9 @@ article {
 	}
 	.section-intro .text h2 {
 		font-size: 2.875em;
+	}
+	.section-slider .text {
+		display: none;
 	}
 	.container-cne,
 	.container-pw {
@@ -654,6 +723,17 @@ article {
 	}
 	.page-footer .contact {
 		max-width: 275px;
+	}
+}
+
+@media (min-width: 801px) {
+	.top {
+		bottom: 1.1em;
+		font-size: 50px;
+		height: 82px;
+		line-height: 76px/*1.15*/;
+		right: 1.1em;
+		width: 82px;
 	}
 }
 
