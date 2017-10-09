@@ -129,14 +129,6 @@ article {
 	display: none;
 }
 
-.mobile {
-	display: block;
-}
-
-.mobile + img {
-	display: none;
-}
-
 .wrapper {
 	margin: 0 auto;
 	max-width: 1200px;
@@ -565,12 +557,6 @@ article {
 	p {
 		padding-top: 5%;
 	}
-	.mobile {
-		display: none;
-	}
-	.mobile + img {
-		display: block;
-	}
 	.wrapper + .wrapper {
 		margin-top: 80px;
 	}
@@ -702,6 +688,12 @@ article {
 	.no-js .page-header .menu > nav,
 	.page-header.open .menu > nav {
 		opacity: 1;
+	}
+}
+
+@media (max-width: 830px) {
+	.section-intro .text {
+		padding: 25px;
 	}
 }
 
