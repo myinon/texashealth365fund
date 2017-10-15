@@ -703,6 +703,11 @@ article {
 	.section-caring .text h2 {
 		font-size: 2.125em;
 	}
+	.container-intro,
+	.container-tech,
+	.container-caring {
+		overflow-y: auto;
+	}
 	#mission .inner-wrapper {
 		padding: 0;
 	}
