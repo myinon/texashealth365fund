@@ -187,9 +187,6 @@
 		determineScrollPosition();
 	}
 
-	document.documentElement.classList.remove("no-js");
-	document.documentElement.classList.add("js");
-
 	hdr.addEventListener("click", (e) => {
 		if (e.defaultPrevented) {
 			return false;
@@ -291,7 +288,7 @@
 				}
 			});
 		}, {
-			rootMargin: "0px 0px -42% 0px",
+			rootMargin: "-42% 0px -42% 0px",
 			threshold: [0]
 		});
 		
