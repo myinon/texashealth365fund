@@ -554,8 +554,8 @@ article {
 
 .page-footer .contact {
 	font-size: 0.9em;
-	margin-bottom: 25px;
-	margin-top: 15px;
+	padding-bottom: 25px;
+	padding-top: 15px;
 	text-align: left;
 }
 
@@ -563,6 +563,22 @@ article {
 	border-bottom: 2px solid #fff;
 	font-style: normal;
 	padding: 7px 0;
+}
+
+.page-footer .section .contact-heading {
+	font-family: "Museo Sans", Arial, sans-serif;
+	font-weight: 900;
+}
+
+.page-footer .phone,
+.page-footer .email {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.page-footer .phone .contact-heading,
+.page-footer .email .contact-heading {
+	flex-basis: 18%;
 }
 
 .page-footer .social-ft {
