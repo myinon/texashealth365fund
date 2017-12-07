@@ -450,6 +450,12 @@ article {
 	}
 }
 
+@supports (-ms-ime-align: auto) and (animation-name: fade) {
+	.container-slider:hover .slide {
+		animation-play-state: running;
+	}
+}
+
 .section-slider .text {
 	background-color: #00a499;
 	border-top: 15px solid #003698;
