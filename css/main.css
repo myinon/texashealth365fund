@@ -747,6 +747,14 @@ article {
 	}
 }
 
+@supports (-ms-ime-align: auto) {
+	@media (min-width: 768px) {
+		.page-footer .info {
+			padding-bottom: 25px;
+		}
+	}
+}
+
 @media (min-width: 801px) {
 	.top {
 		bottom: 1.1em;
