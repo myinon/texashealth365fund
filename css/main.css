@@ -401,6 +401,7 @@ article {
 	.slide {
 		grid-column: 1 / 2;
 		grid-row: 1 / 2;
+		position: relative;
 	}
 	/*
 	 * Negative offset in order to avoid images popping into
