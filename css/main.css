@@ -401,26 +401,30 @@ article {
 	.slide {
 		grid-column: 1 / 2;
 		grid-row: 1 / 2;
-		opacity: 0;
 	}
 	/*
 	 * Negative offset in order to avoid images popping into
 	 * view during the first iteration of the animation.
 	 */
 	.slide:nth-child(1) {
-		animation: fade 30s linear -30s infinite normal running;
+		animation: fade 35s linear 0s infinite normal forwards;
+		z-index: 5;
 	}
 	.slide:nth-child(2) {
-		animation: fade 30s linear -24s infinite normal;
+		animation: fade 35s linear 7s infinite normal forwards;
+		z-index: 4;
 	}
 	.slide:nth-child(3) {
-		animation: fade 30s linear -18s infinite normal;
+		animation: fade 35s linear 14s infinite normal forwards;
+		z-index: 3;
 	}
 	.slide:nth-child(4) {
-		animation: fade 30s linear -12s infinite normal;
+		animation: fade 35s linear 21s infinite normal forwards;
+		z-index: 2;
 	}
 	.slide:nth-child(5) {
-		animation: fade 30s linear -6s infinite normal;
+		animation: fade 35s linear 28s infinite normal forwards;
+		z-index: 1;
 	}
 	.container-slider:hover .slide {
 		animation-play-state: paused;
@@ -428,20 +432,28 @@ article {
 	/*
 	 * 5 images for 6 seconds each
 	 * 1 second is used for the transition
-	 * 100% / 5 = 20% (Length of frame)
-	 * 20% / 6 = 3.33333333%   (Length of 1 second)
+	 * n (number of images) = 5
+	 * a (slide duration) = 6
+	 * b (transition duration) = 1
+	 * t (total animation time) = (a + b) * n = (6 + 1) * 5 = 7 * 5 = 35 seconds
+	 * Keyframes:
+	 * 0%
+	 * (a / t) * 100% = (6 / 35) * 100% = 17%
+	 * ((a + b) / t) * 100% = (1 / n) * 100% = ((6 + 1) / 35) * 100% = (7 / 35) * 100% = (1 / 5) * 100% = 20%
+	 * 100% - ((b / t) * 100%) = 100% - ((1 / 35) * 100%) = 100% - (0.0285714 * 100%) = 97%
+	 * 100%
 	 */
 	@keyframes fade {
 		0% {
 			opacity: 1;
 		}
-		16.66666667% {
+		17% {
 			opacity: 1;
 		}
 		20% {
 			opacity: 0;
 		}
-		96.66666667% {
+		97% {
 			opacity: 0;
 		}
 		100% {
