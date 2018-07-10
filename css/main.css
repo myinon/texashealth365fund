@@ -701,6 +701,7 @@ article {
 	}
 	.container-cne,
 	.container-pw {
+		align-items: center;
 		grid-column-gap: 30px;
 		grid-template-columns: 1fr 1fr;
 	}
